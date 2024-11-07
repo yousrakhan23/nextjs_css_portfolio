@@ -1,0 +1,109 @@
+/* Section Styling */
+.services-section {
+    color: #ffffff;
+    padding: 6rem 1.25rem;
+  }
+  
+  .services-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .services-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  
+  .services-title {
+    font-size: 3rem;
+    font-family: serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .services-title:hover {
+    text-transform: uppercase;
+  }
+  
+  .services-title span {
+    font-family: serif;
+  }
+  
+  /* Services Grid */
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem -0.25rem;
+  }
+  
+  .service-card {
+    padding: 1rem;
+    width: 33.3333%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Icon Styling */
+  .service-icon {
+    width: 6rem;
+    height: 6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: black;
+    color: white;
+    margin-bottom: 1.25rem;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  .service-icon:hover {
+    transform: rotate(12deg) scale(1.1);
+  }
+  
+  /* Service Info */
+  .service-info {
+    flex-grow: 1;
+  }
+  
+  .service-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  .service-description {
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Contact Button */
+  .contact-button {
+    display: flex;
+    margin: 4rem auto;
+    padding: 0.5rem 2rem;
+    font-size: 1.125rem;
+    color: white;
+    background: linear-gradient(to right, #ed64a6, #9f7aea);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .contact-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #6b46c1, #9f7aea);
+  }
+  

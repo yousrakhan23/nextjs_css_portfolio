@@ -1,5 +1,5 @@
 "use client";
-import React from 'react'
+import React from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 
@@ -16,13 +16,14 @@ import project10 from '../../public/project10.jpg';
 import project11 from '../../public/project11.jpg';
 import project12 from '../../public/project12.jpg';
 
+import './Projects.css';
 
 const projects = [
   {
     src: project1,
     alt: "MANZZARI",
     title: "MANZZARI JEWELLERY WEBSITE",
-    description: "This jewellery website is built with Next.js and Tailwind CSS. It is a full-stack web application that allows users to view and search for jewellery items. Users can also add items to their cart and view their cart.",
+    description: "This jewellery website is built with Next.js and Tailwind CSS.",
     link: "https://05-class-assignment-next-js-w25p-qtrommcu9.vercel.app/",
   },
   {
@@ -43,35 +44,35 @@ const projects = [
     src: project4,
     alt: "NUMBER GUESSING GAME APP",
     title: "NUMBER GUESSING GAME",
-    description: "This number guessing game is built with Next.js and Tailwind CSS. It is a simple and modern number guessing game that allows users to guess a number between 1 and 100.",
+    description: "Number guessing game is built with Next.js and Tailwind CSS,simple and modern number guessing game that allows users to guess a number.",
     link: "https://day-4-of-30-days-of-nextjs-number-guessing-game-arbve33bu.vercel.app/"
   },
   {
     src: project5,
     alt: "BIRTHDAY APPLICATION",
     title: "BIRTHDAY APPLICATION",
-    description: "This birthday application is built with Next.js and Tailwind CSS. It is a simple and modern birthday application that allows users to enter their birthday and see their age.",
+    description: "Birthday app is built with Next.js and Tailwind CSS,simple and modern birthday app that allows users to enter their birthday and see their age.",
     link: "https://day-3-of-30-days-of-nextjs-birthday-pqqtpdf6l.vercel.app/"
   },
   {
     src: project6,
     alt: "SAFE HOME CHEMICAL WEBSITES",
     title: "SAFE HOME CHEMICAL WEBSITES",
-    description: "This safe home chemical websites is built with Next.js and Tailwind CSS. It is a simple and modern safe home chemical websites that allows users to view chemical information.",
+    description: "This safe home chemical websites is built with Next.js and Tailwind CSS.",
     link: "https://03-class-assignment-next-js-6gj6-jglil2ged.vercel.app/"
   },
   {
     src: project7,
     alt: "HTML CSS TYPESCRIPT PORTFOLIO",
     title: "HTML CSS TYPESCRIPT PORTFOLIO",
-    description: "This HTML CSS TypeScript portfolio is built with HTML CSS TYPESCRIPT/JAVASCRIPT. It is a simple and modern HTML CSS TypeScript portfolio that allows users to view my projects.",
+    description: "This HTML CSS TypeScript portfolio is built with HTML CSS TYPESCRIPT.",
     link: "https://responsive-portfolio-website-using-html-css-java-ciq8u74kr.vercel.app/"
   },
   {
     src: project8,
     alt: "UNIQYE PATH AND SHAREABLE REUME",
     title: "UNIQYE PATH AND SHAREABLE REUME",
-    description: "This uniqye path and shareable reume is built with HTML CSS TYPE/JAVASCRIPT. It is a simple and modern uniqye path and shareable reume that allows users to view my resume.",
+    description: "It is built with HTML CSS TYPESCRIPT.It is a simple and modern resume.",
     link: "https://milestone-5-unique-path-shareable-link-qqmwultk5.vercel.app/"
   },
   {
@@ -85,63 +86,61 @@ const projects = [
     src: project10,
     alt: "DYNAMIC RESUME BUILDER",
     title: "DYNAMIC RESUME BUILDER",
-    description: "This dynamic resume builder is built with HTML CSS TYPE/JAVASCRIPT. It is a simple and modern dynamic resume builder that allows users to view my resume.",
+    description: "This dynamic resume builder is built with HTML CSS TYPESCRIPT.",
     link: "https://milestone-2-3-dynamic-resume-builder-form-ez6borkpq.vercel.app/",
   },
   {
     src: project11,
     alt: "STATIC RESUME BUILDER",
     title: "STATIC RESUME BUILDER",
-    description: "This static resume builder is built with HTML CSS TYPE/JAVASCRIPT. It is a simple and modern static resume builder that allows users to view my resume.",
+    description: "This static resume builder is built with HTML CSS TYPESCRIPT. ",
     link: "https://milestone-1-static-resume-builder-7idt94oye.vercel.app/",
   },
   {
     src: project12,
     alt: "HOME MADE PRODUCTS WEBSITE",
     title: "HOME MADE PRODUCTS WEBSITE",
-    description: "This home made products website is built with Next.js and Tailwind CSS. It is a simple and modern home made products websites that allows users to view my products and inforamation.",
+    description: "Built with Next.js and Tailwind CSS, that allows users to view products,inforamation.",
   },
 ];
 
 const Project = () => {
   return (
-    <section className="text-gray-900 body-font"> 
-      <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-col text-center w-full mb-20">
-          <h1 className="flex justify-center items-center pb-14 text-5xl font-serif font-bold text-gray-900 hover:text-pink-600 animate-bounce hover:uppercase">
-            <span className="text-white text-5xl cursor-pointer">Projects</span>
+    <section className="project-section">
+      <div className="project-container">
+        <div className="project-header">
+          <h1 className="project-title">
+            <span>Projects</span>
           </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-3xl text-gray-500 font-serif">
+          <p className="project-description">
             Explore my projects and learn more about my work and skills..!!
           </p>
         </div>
-        <div className="flex flex-wrap -m-4">
+        <div className="project-grid">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="p-4 lg:w-1/4 md:w-1/2"
+              className="project-card"
               data-aos="flip-right" data-aos-duration="2000"
             >
-              <div className="flex flex-col items-center text-center border border-black rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl relative">
-                <div className="relative h-[200px] w-full overflow-hidden rounded-t-lg transition-transform transform hover:scale-110">
-                  <Image
-                    src={project.src}
-                    alt={project.alt}
-                    className="object-cover w-full h-full"
-                    layout="fill"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 transition-opacity hover:opacity-40"></div>
-                </div>
-                <div className="w-full p-4 bg-black h-[220px]">
-                  <Link href={project.link || "#"}>
-                    <h1 className="text-2xl font-serif text-bold text-[#9a5cec] hover:uppercase hover:text-violet-900 transition-colors duration-300 cursor-pointer mb-3">
-                      {project.title}
-                    </h1>
-                  </Link>
-                  <p className="mb-4 text-gray-700">
-                    {project.description}
-                  </p>
-                </div>
+              <div className="project-image-container">
+                <Image
+                  src={project.src}
+                  alt={project.alt}
+                  className="project-image"
+                  layout="fill"
+                />
+                <div className="image-overlay"></div>
+              </div>
+              <div className="project-info">
+                <Link href={project.link || "#"}>
+                  <h1 className="project-name">
+                    {project.title}
+                  </h1>
+                </Link>
+                <p className="project-text">
+                  {project.description}
+                </p>
               </div>
             </div>
           ))}

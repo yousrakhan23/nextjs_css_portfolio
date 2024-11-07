@@ -1,0 +1,80 @@
+/* Navbar.css */
+
+.header {
+  background-color: #1A0B2E;
+  color: white;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between; /* Aligns title and navbar on opposite sides */
+  }
+}
+
+.title-font {
+  display: flex;
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-family: serif;
+  animation: pulse 2s infinite;
+  transition: all 0.3s;
+}
+
+.title-font:hover {
+  text-transform: uppercase;
+}
+
+.title-font h1 {
+  margin-left: 0.75rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.title-font h1 span {
+  font-size: 3rem;
+  transition: color 0.3s;
+}
+
+.title-font h1 span:hover {
+  color: black;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  justify-content: flex-end; /* Aligns links to the right */
+  flex-grow: 1;
+}
+
+.nav-links a {
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  transform: scale(1.1);
+  color: #9b5de5;
+  text-transform: uppercase;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

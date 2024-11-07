@@ -1,0 +1,84 @@
+/* Home.css */
+
+.hero-section {
+  padding: 2rem;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; /* Aligns content and image on opposite sides */
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color:#9b5de5;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-button {
+  background: #9b5de5;
+  color: white;
+  font-size: 1.125rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.social-button:hover {
+  transform: scale(1.1);
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px; /* Set a max-width for the image container */
+  height: 400px; /* Set a max-height for the image container */
+  right: auto;
+  order: 2; /* Position image second on small screens */
+}
+
+.profile-image {
+  width: 100%;
+  height: auto;
+  right: 50%;
+  border-radius: 50%;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row; /* Horizontal alignment on larger screens */
+  }
+
+  .image-container {
+    order: 1; /* Move image to the right on larger screens */
+  }
+}
