@@ -1,64 +1,119 @@
 "use client";
-import { FaCode, FaPaintBrush, FaMobileAlt } from 'react-icons/fa';
-import Link from "next/link";
+import { useEffect } from "react";
+import AOS from "aos";
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs } from "react-icons/fa";
+import { SiTailwindcss, SiTypescript, SiNextdotjs } from "react-icons/si";
+import './Skills.css'; // Import the custom CSS file
 
-import './Skills.css';
+interface SkillCardProps {
+  title: string;
+  description: string;
+  colorClass: string;
+  svgIcon: React.ReactNode;
+  dataAos?: string;
+  dataAosDelay?: string;
+}
 
-export default function Services() {
+function SkillCard({
+  title,
+  description,
+  colorClass,
+  svgIcon,
+  dataAos,
+  dataAosDelay
+}: SkillCardProps) {
   return (
-    <>
-      <section className="services-section">
-        <div className="services-container">
-          <div className="services-header">
-            <h1 className="services-title">
-              <span>Services</span>
-            </h1>
-          </div>
-          <div className="services-grid">
-            
-            <div className="service-card" data-aos="fade-up" data-aos-duration="1000">
-              <div className="service-icon">
-                <FaCode size={40} />
-              </div>
-              <div className="service-info">
-                <h2 className="service-name">Web Development</h2>
-                <p className="service-description">
-                  Transform your ideas into dynamic, responsive websites! With expertise in HTML, CSS, JavaScript, React, and Next.js, I create modern, high-quality web solutions tailored to meet your business needs. Let’s bring your vision to life..!!
-                </p>
-              </div>
-            </div>
-            
-            <div className="service-card" data-aos="fade-up" data-aos-duration="1200">
-              <div className="service-icon">
-                <FaPaintBrush size={40} />
-              </div>
-              <div className="service-info">
-                <h2 className="service-name">Web Design</h2>
-                <p className="service-description">
-                  Elevate your online presence with stunning, user-friendly designs! I specialize in creating visually captivating, responsive websites that engage and inspire. Let’s design a digital experience that makes a lasting impression..!!
-                </p>
-              </div>
-            </div>
-            
-            <div className="service-card" data-aos="fade-up" data-aos-duration="1400">
-              <div className="service-icon">
-                <FaMobileAlt size={40} />
-              </div>
-              <div className="service-info">
-                <h2 className="service-name">Responsive Web Design</h2>
-                <p className="service-description">
-                  Unlock the power of responsive design! I create seamless, adaptive websites that look and function beautifully on any device. Let’s make your digital presence accessible, engaging, and ready for every screen size..!!
-                </p>
-              </div>
-            </div>
-          </div>
-          <Link href="../Contact">
-            <button className="contact-button">
-              Contact me
-            </button>
-          </Link>
+    <div
+      className={`skill-card ${colorClass}`}
+      data-aos={dataAos}
+      data-aos-delay={dataAosDelay}
+    >
+      <div className={`icon ${colorClass}`}>
+        {svgIcon}
+      </div>
+      <div className="text-center">
+        <h2 className="skill-title">{title}</h2>
+        <p className="skill-description">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+export default function Skills() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
+  return (
+    <section className="section">
+      <div className="container">
+        <h1 className="title">Skills</h1>
+        <div className="grid">
+          <SkillCard
+            title="HTML"
+            description="HTML is the standard markup language for Web pages."
+            colorClass="html"
+            svgIcon={<FaHtml5 size={80} />}
+            dataAos="fade-up"
+          />
+          <SkillCard
+            title="CSS"
+            description="CSS is used to describe how HTML elements are displayed."
+            colorClass="css"
+            svgIcon={<FaCss3Alt size={80} />}
+            dataAos="fade-up"
+            dataAosDelay="100"
+          />
+          <SkillCard
+            title="Tailwind CSS"
+            description="Rapidly build modern websites without leaving your HTML."
+            colorClass="tailwind"
+            svgIcon={<SiTailwindcss size={80} />}
+            dataAos="fade-up"
+            dataAosDelay="200"
+          />
+          <SkillCard
+            title="JavaScript"
+            description="JavaScript is the world's most popular programming language."
+            colorClass="js"
+            svgIcon={<FaJsSquare size={80} />}
+            dataAos="fade-up"
+            dataAosDelay="300"
+          />
+          <SkillCard
+            title="TypeScript"
+            description="TypeScript is a superset of JavaScript that adds static typing."
+            colorClass="ts"
+            svgIcon={<SiTypescript size={80} />}
+            dataAos="fade-up"
+            dataAosDelay="400"
+          />
+          <SkillCard
+            title="React.js"
+            description="React is a JavaScript library for building user interfaces."
+            colorClass="react"
+            svgIcon={<FaReact size={80} />}
+            dataAos="fade-up"
+            dataAosDelay="500"
+          />
+          <SkillCard
+            title="Next.js"
+            description="Next.js is a React framework for building full-stack applications."
+            colorClass="next"
+            svgIcon={<SiNextdotjs size={80} />}
+            dataAos="fade-up"
+            dataAosDelay="600"
+          />
+          <SkillCard
+            title="Node.js"
+            description="Node.js is an open-source JavaScript runtime environment."
+            colorClass="node"
+            svgIcon={<FaNodeJs size={80} />}
+            dataAos="fade-up"
+            dataAosDelay="700"
+          />
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
